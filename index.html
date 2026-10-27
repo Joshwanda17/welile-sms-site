@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welile SMS Forwarder</title>
+<style>
+  :root { --bg:#f5f6fa; --card:#fff; --ink:#1c1b22; --muted:#6b6a78; --brand:#5b21b6; --line:#e4e4ec; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#121118; --card:#1c1b25; --ink:#f1f0f6; --muted:#a09fb0; --brand:#8b5cf6; --line:#2d2c3a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:32px 16px 48px; }
+  h1 { font-size:1.6rem; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; margin-bottom:16px; }
+  .btn { display:block; text-align:center; background:var(--brand); color:#fff; text-decoration:none; font-weight:600; padding:14px; border-radius:12px; }
+  h2 { font-size:1.05rem; margin:0 0 10px; }
+  ol { margin:0; padding-left:20px; } li { margin-bottom:8px; }
+  code { background:var(--bg); padding:2px 6px; border-radius:6px; font-size:.88em; word-break:break-all; }
+  .note { color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Welile SMS Forwarder</h1>
+  <p class="sub">Mobile money intake for Android.</p>
+
+  <div class="card">
+    <a class="btn" href="welile-sms-forwarder.apk" download>Download APK</a>
+    <p class="note" style="margin:12px 0 0">Android 8.0 or newer. Internal Welile use.</p>
+  </div>
+
+  <div class="card">
+    <h2>Install</h2>
+    <ol>
+      <li>Open the downloaded file. If Android asks, allow installs from your browser ("Install unknown apps").</li>
+      <li>Open <strong>SMS Forwarder</strong> and grant the SMS permissions when prompted.</li>
+      <li>Disable battery optimisation for the app so it keeps running in the background.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Setup</h2>
+    <ol>
+      <li>In the Setup card, confirm the endpoint URL is <code>https://byrzshwlentqvktcksem.supabase.co/functions/v1/sms-forwarder-ingest</code>.</li>
+      <li>Enter the device token you were given. Ask your Welile admin if you don't have one.</li>
+      <li>Tap <strong>Save and enable</strong>. The status pill turns <strong>Active</strong>.</li>
+    </ol>
+    <p class="note">Only MTNMobMoney and AirtelMoney messages are forwarded. OTP and secret-code messages are never sent.</p>
+  </div>
+</main>
+</body>
+</html>
